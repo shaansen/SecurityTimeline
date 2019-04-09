@@ -1,0 +1,32 @@
+@import '~antd/dist/antd.css';
+
+.App {
+}
+
+/* For demo */
+.ant-carousel .slick-slide {
+  height: 100vh;
+  background: #000;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.subcontent {
+  text-align: center;
+  padding: 25px 25px 25px 25px;
+  border: 1px solid white;
+  color: white;
+  width: 1000px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.subcontent > h1,
+h2 {
+  color: white;
+}
