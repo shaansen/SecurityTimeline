@@ -1,29 +1,53 @@
 import React, { Component } from 'react';
 import { Carousel } from 'antd';
+import { Row, Col, Timeline, PageHeader } from 'antd';
 import { content } from './content';
 import SubContent from './SubContent';
 
 class Header extends Component {
-  onChange(a, b, c) {
-    console.log(a, b, c);
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentId: 0
+    };
   }
 
-  renderCarousel() {
+  changeActiveId(id) {
+    this.setState({
+      currentId: id
+    });
+  }
+
+  renderTimeline() {
     return content.map((c, i) => {
       return (
-        <div key={i}>
-          <SubContent content={c} />
-        </div>
+        <Timeline.Item key={i} onClick={() => this.changeActiveId(i)}>
+          <div className={this.state.currentId == i ? 'active' : ''}>
+            {c.period}
+          </div>
+        </Timeline.Item>
       );
     });
   }
 
+  renderContent() {
+    return <SubContent content={content[this.state.currentId]} />;
+  }
+
   render() {
-    console.log(content);
     return (
-      <Carousel effect="fade" afterChange={this.onChange}>
-        {this.renderCarousel()}
-      </Carousel>
+      <div>
+        <PageHeader
+          title="Security Timeline"
+          subTitle="Created by Shantanu Sengupta"
+        />
+        <Row>
+          <Col span={2}>
+            <Timeline>{this.renderTimeline()}</Timeline>
+          </Col>
+          <Col span={22}>{this.renderContent()}</Col>
+        </Row>
+      </div>
     );
   }
 }

@@ -1,29 +1,13 @@
 @import '~antd/dist/antd.css';
 
-.App {
-}
-
-/* For demo */
-.ant-carousel .slick-slide {
-  height: 100vh;
-  background: #000;
-}
-
-ul.slick-dots {
-  position: absolute;
-  top: 95%;
-}
-
-button {
-  height: 20px !important;
-  width: 40px !important;
+body {
+  background-color: black;
 }
 
 .subcontent {
-  border: 1px solid white;
   color: white;
   padding: 20px 20px 20px 20px;
-  height: 95vh;
+  height: 90vh;
 }
 
 .subcontent > h1,
@@ -38,7 +22,7 @@ img {
 }
 
 .image-container {
-  height: 95vh;
+  height: 90vh;
 }
 
 img[class] {
@@ -49,4 +33,33 @@ img[class] {
 
 .subcontent > * {
   vertical-align: middle;
+}
+
+.ant-timeline {
+  height: 90vh;
+  color: white;
+  padding: 20px 20px 20px 20px;
+}
+
+div.ant-timeline-item-content {
+  transition: font-size 0.3s;
+}
+
+div.ant-timeline-item-content:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+div.active {
+  font-weight: bold;
+}
+
+div.ant-page-header {
+  height: 6vh;
+  background-color: black;
+}
+
+div.ant-page-header span {
+  color: white;
+  font-size: 20px;
 }
