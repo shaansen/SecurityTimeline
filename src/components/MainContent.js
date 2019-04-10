@@ -21,7 +21,9 @@ class Header extends Component {
   render() {
     console.log(content);
     return (
-      <Carousel afterChange={this.onChange}>{this.renderCarousel()}</Carousel>
+      <Carousel effect="fade" afterChange={this.onChange}>
+        {this.renderCarousel()}
+      </Carousel>
     );
   }
 }

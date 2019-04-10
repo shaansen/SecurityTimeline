@@ -9,24 +9,44 @@
   background: #000;
 }
 
-.ant-carousel .slick-slide h3 {
-  color: #fff;
+ul.slick-dots {
+  position: absolute;
+  top: 95%;
+}
+
+button {
+  height: 20px !important;
+  width: 40px !important;
 }
 
 .subcontent {
-  text-align: center;
-  padding: 25px 25px 25px 25px;
   border: 1px solid white;
   color: white;
-  width: 1000px;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  padding: 20px 20px 20px 20px;
+  height: 95vh;
 }
 
 .subcontent > h1,
-h2 {
+h2,
+h3 {
   color: white;
+}
+
+img {
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.image-container {
+  height: 95vh;
+}
+
+img[class] {
+  width: 100%;
+  padding: 25px 25px 25px 25px;
+  border-radius: 50px;
+}
+
+.subcontent > * {
+  vertical-align: middle;
 }
