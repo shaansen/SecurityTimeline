@@ -21,10 +21,6 @@ class SubContent extends Component {
               <p>{content.description}</p>
               <h3 className="general-header">Implication</h3>
               <p>{content.implication}</p>
-              <div className="footer">
-                <hr />
-                <p className="copyright">{content.copyright}</p>
-              </div>
             </div>
           </Col>
         </Row>
