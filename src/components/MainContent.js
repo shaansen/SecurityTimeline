@@ -37,10 +37,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <PageHeader
-          title="Security Timeline"
-          subTitle="Created by Shantanu Sengupta"
-        />
+        <PageHeader title="Security Timeline" />
         <Row>
           <Col span={2}>
             <Timeline>{this.renderTimeline()}</Timeline>

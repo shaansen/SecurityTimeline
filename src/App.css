@@ -2,6 +2,7 @@
 
 body {
   background-color: black;
+  font-family: 'Poppins';
 }
 
 .subcontent {
@@ -12,8 +13,10 @@ body {
 
 .subcontent > h1,
 h2,
-h3 {
+h3,
+h4 {
   color: white;
+  font-family: 'Bungee Inline';
 }
 
 img {
@@ -36,9 +39,11 @@ img[class] {
 }
 
 .ant-timeline {
+  font-family: 'Poppins';
   height: 90vh;
   color: white;
   padding: 20px 20px 20px 20px;
+  overflow: auto;
 }
 
 div.ant-timeline-item-content {
@@ -46,20 +51,76 @@ div.ant-timeline-item-content {
 }
 
 div.ant-timeline-item-content:hover {
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
 div.active {
   font-weight: bold;
+  font-size: 20px;
+  color: #eac61a;
 }
 
 div.ant-page-header {
-  height: 6vh;
+  height: 10vh;
+  vertical-align: middle;
   background-color: black;
+  font-family: 'Bungee Inline';
+  font-size: 40px;
 }
 
 div.ant-page-header span {
   color: white;
+  font-size: 25px;
+}
+
+.copyright,
+h4 {
+  font-size: 10px;
+}
+
+div.footer {
+  padding: 0px 40px 0px 0px;
+  position: fixed;
+  bottom: 5vh;
+}
+
+h1.subcontent-header {
+  color: #eac61a;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.general-header {
   font-size: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px black;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+  outline: 1px solid black;
+  height: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightgrey;
+}
+
+.ant-timeline-item-head-blue {
+  color: #eac61a;
+  border-color: white;
 }
