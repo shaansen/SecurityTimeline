@@ -34,6 +34,14 @@ class Header extends Component {
     return <SubContent content={content[this.state.currentId]} />;
   }
 
+  keyHandling(e) {      
+    console.log("Key code: " + e.keyCode);    
+  }
+
+  componentDidMount() {     
+    window.addEventListener("keyup", this.keyHandling);   
+  }
+
   render() {
     return (
       <div>
