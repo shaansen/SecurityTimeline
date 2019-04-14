@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Carousel } from 'antd';
-import { Row, Col, Timeline, PageHeader } from 'antd';
 import { content } from './content';
 import SubContent from './SubContent';
 
@@ -18,32 +16,15 @@ class Header extends Component {
     });
   }
 
-  renderTimeline() {
-    return content.map((c, i) => {
-      return (
-        <Timeline.Item key={i} onClick={() => this.changeActiveId(i)}>
-          <div className={this.state.currentId == i ? 'active' : ''}>
-            {c.period}
-          </div>
-        </Timeline.Item>
-      );
-    });
-  }
-
   renderContent() {
-    return <SubContent content={content[this.state.currentId]} />;
+    return content.map((c,i) => <SubContent key={i} content={c} />)
   }
   
   render() {
     return (
       <div>
-        <PageHeader title="Security Timeline" />
-        <Row>
-          <Col span={2}>
-            <Timeline>{this.renderTimeline()}</Timeline>
-          </Col>
-          <Col span={22}>{this.renderContent()}</Col>
-        </Row>
+        <div>"Security Timeline"</div>
+        {this.renderContent()}
       </div>
     );
   }

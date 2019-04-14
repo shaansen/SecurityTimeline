@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
 
 class SubContent extends Component {
   render() {
     const { content } = this.props;
     return (
       <div className="maincontent">
-        <Row>
-          <Col span={12}>
             <div className="image-container">
               <img className="object-fit_cover" src={content.img} />
             </div>
-          </Col>
-          <Col span={12}>
             <div className="subcontent">
               <h1 className="subcontent-header">
                 {content.period} : {content.title}
@@ -22,8 +17,7 @@ class SubContent extends Component {
               <h3 className="general-header">Implication</h3>
               <p>{content.implication}</p>
             </div>
-          </Col>
-        </Row>
+          
       </div>
     );
   }
