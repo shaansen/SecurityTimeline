@@ -8,32 +8,49 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      getElemnt: null
+      getElement: null,
+      activeID: null
     };
   }
 
   componentDidMount() {
     this.setState(() => {
       return {
-        getElement: document.getElementById('sample')
+        getElement: document.getElementById('sample'),
+        activeID: 0
       };
     });
   }
 
   renderHeader() {
-    const pills = content.map((c, i) => (
-      <li key={i} className="nav-item">
+
+    const pills = content.map((c, i) => {
+      const activeClass = this.state.activeID == i ? "active" : "";
+      console.log(this.state.activeID, i, activeClass)
+      return <li key={i} className={"nav-item "+activeClass}>
         <a className="nav-link" href={'#' + c.period}>
           {c.period}
         </a>
       </li>
-    ));
+    });
 
-    return <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
-    <a className="navbar-brand" href="/">
-      Security Timeline
-    </a><ul className="nav nav-pills">{pills}</ul></nav>;
+    return (
+      <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+        <a className="navbar-brand" href="/">
+          Security Timeline
+        </a>
+        <ul className="nav nav-pills">{pills}</ul>
+      </nav>
+    );
   }
+
+  onChange = (isVisible,id) => {
+    if(isVisible) {
+      this.setState({
+        activeID: id
+      });
+    }    
+  };
 
   renderContent() {
     var containmentDOMRect = this.state.getElement
@@ -42,10 +59,12 @@ class Header extends Component {
 
     return content.map((c, i) => {
       return containmentDOMRect ? (
-        <VisibilitySensor key={i} containment={containmentDOMRect}>
+        <VisibilitySensor
+          key={i}
+          containment={containmentDOMRect}
+          onChange={(e) => this.onChange(e,i)}
+        >
           {({ isVisible }) => {
-            if(isVisible)
-              console.log(c.title)
             return <SubContent content={c} />;
           }}
         </VisibilitySensor>
@@ -53,14 +72,10 @@ class Header extends Component {
     });
   }
 
-  onChange(isVisible) {
-    console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
-  }
-
   render() {
     return (
       <div className="App">
-          {this.renderHeader()}
+        {this.renderHeader()}
         <div
           id="sample"
           style={{
