@@ -4,7 +4,7 @@ class SubContent extends Component {
   render() {
     const { content } = this.props;
     return (
-      <div class="container">
+      <div class="container" id={content.period}>
         <div class="row">
           <div class="col-sm">
             <img className="object-fit_cover" src={content.img} />
