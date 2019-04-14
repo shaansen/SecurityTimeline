@@ -1,47 +1,74 @@
 import React, { Component } from 'react';
 import { content } from './content';
+// import SubContent from './SubContent';
+import VisibilitySensor from 'react-visibility-sensor';
 import SubContent from './SubContent';
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentId: 0
+      getElemnt: null
     };
   }
 
-  changeActiveId(id) {
-    this.setState({
-      currentId: id
+  componentDidMount() {
+    this.setState(() => {
+      return {
+        getElement: document.getElementById('sample')
+      };
     });
   }
 
-  renderContent() {
-    return content.map((c, i) => <SubContent key={i} content={c} />);
-  }
-
-  renderPills() {
-    const pills = content.map(c => (
-      <li class="nav-item">
-        <a class="nav-link" href={'#' + c.period}>
+  renderHeader() {
+    const pills = content.map((c, i) => (
+      <li key={i} className="nav-item">
+        <a className="nav-link" href={'#' + c.period}>
           {c.period}
         </a>
       </li>
     ));
 
-    return <ul class="nav nav-pills">{pills}</ul>;
+    return <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+    <a className="navbar-brand" href="/">
+      Security Timeline
+    </a><ul className="nav nav-pills">{pills}</ul></nav>;
+  }
+
+  renderContent() {
+    var containmentDOMRect = this.state.getElement
+      ? this.state.getElement
+      : null;
+
+    return content.map((c, i) => {
+      return containmentDOMRect ? (
+        <VisibilitySensor key={i} containment={containmentDOMRect}>
+          {({ isVisible }) => {
+            if(isVisible)
+              console.log(c.title)
+            return <SubContent content={c} />;
+          }}
+        </VisibilitySensor>
+      ) : null;
+    });
+  }
+
+  onChange(isVisible) {
+    console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
   }
 
   render() {
     return (
-      <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
-          <a class="navbar-brand" href="/">
-            Security Timeline
-          </a>
-          {this.renderPills()}
-        </nav>
-        <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+      <div className="App">
+          {this.renderHeader()}
+        <div
+          id="sample"
+          style={{
+            height: 100 + 'vh',
+            maxHeight: 100 + 'vh',
+            overflowY: 'scroll'
+          }}
+        >
           {this.renderContent()}
         </div>
       </div>
