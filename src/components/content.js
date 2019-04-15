@@ -31,7 +31,7 @@ export const content = [
   },
   {
     img:
-      'https://media.gettyimages.com/photos/admiral-william-studeman-acting-director-of-the-cia-testifies-before-picture-id51969414?s=2048x2048',
+      'https://cdn10.picryl.com/photo/1982/04/07/capt-william-o-studeman-usn-uncovered-b7bee0-1600.jpg',
     period: '1990s',
     title: 'The Tale Of Two Papers - William Studeman',
     description:
