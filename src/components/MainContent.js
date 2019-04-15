@@ -24,7 +24,7 @@ class Header extends Component {
 
   renderHeader() {
     const pills = content.map((c, i) => {
-      const activeClass = this.state.activeID == i ? 'btn-primary' : '';
+      const activeClass = this.state.activeID === i ? 'btn-primary' : '';
       return (
         <li key={i}>
           <button
