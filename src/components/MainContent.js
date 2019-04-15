@@ -47,7 +47,9 @@ class Header extends Component {
         <a className="navbar-brand" href="/">
           Security Timeline
         </a>
+        <div className="timeline">
         <ul className="nav nav-pills">{pills}</ul>
+        </div>
       </nav>
     );
   }
@@ -77,13 +79,14 @@ class Header extends Component {
             return <SubContent content={c} />;
           }}
         </VisibilitySensor>
+        </div>
       ) : null;
     });
   }
 
   render() {
     return (
-      <div className="App container-fluid">
+      <div className="App">
         {this.renderHeader()}
         <div
           id="sample"
