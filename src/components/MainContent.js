@@ -23,19 +23,27 @@ class Header extends Component {
   }
 
   renderHeader() {
-
     const pills = content.map((c, i) => {
-      const activeClass = this.state.activeID == i ? "active" : "";
-      console.log(this.state.activeID, i, activeClass)
-      return <li key={i} className={"nav-item "+activeClass}>
-        <a className="nav-link" href={'#' + c.period}>
-          {c.period}
-        </a>
-      </li>
+      const activeClass = this.state.activeID == i ? 'btn-primary' : '';
+      return (
+        <li key={i}>
+          <button
+            className={'btn ' + activeClass}
+            onClick={() => {
+              document.getElementById(c.period).scrollIntoView(true);
+              this.setState({
+                activeID: i
+              });
+            }}
+          >
+            {c.period}
+          </button>
+        </li>
+      );
     });
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+      <nav className="header navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
         <a className="navbar-brand" href="/">
           Security Timeline
         </a>
@@ -44,12 +52,12 @@ class Header extends Component {
     );
   }
 
-  onChange = (isVisible,id) => {
-    if(isVisible) {
+  onChange = (isVisible, id) => {
+    if (isVisible) {
       this.setState({
         activeID: id
       });
-    }    
+    }
   };
 
   renderContent() {
@@ -62,7 +70,7 @@ class Header extends Component {
         <VisibilitySensor
           key={i}
           containment={containmentDOMRect}
-          onChange={(e) => this.onChange(e,i)}
+          onChange={e => this.onChange(e, i)}
         >
           {({ isVisible }) => {
             return <SubContent content={c} />;
@@ -74,13 +82,13 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App container-fluid">
         {this.renderHeader()}
         <div
           id="sample"
           style={{
-            height: 100 + 'vh',
-            maxHeight: 100 + 'vh',
+            height: 90 + 'vh',
+            maxHeight: 90 + 'vh',
             overflowY: 'scroll'
           }}
         >
