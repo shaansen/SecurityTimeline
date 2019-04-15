@@ -30,7 +30,7 @@ class Header extends Component {
           <button
             className={'btn ' + activeClass}
             onClick={() => {
-              document.getElementById(c.period).scrollIntoView(true);
+              document.getElementById(c.title).scrollIntoView(true);
               this.setState({
                 activeID: i
               });
@@ -67,6 +67,7 @@ class Header extends Component {
 
     return content.map((c, i) => {
       return containmentDOMRect ? (
+        <div className="main-content"  id={c.title}>
         <VisibilitySensor
           key={i}
           containment={containmentDOMRect}

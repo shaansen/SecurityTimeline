@@ -4,12 +4,12 @@ class SubContent extends Component {
   render() {
     const { content } = this.props;
     return (
-      <div className="container-fluid main-content" id={content.period}>
+      <div className="container">
         <div className="row">
-          <div className="col-sm">
-            <img className="object-fit_cover" src={content.img} />
+          <div className="col-sm sub-container">
+            <img src={content.img} />
           </div>
-          <div className="col-sm">
+          <div className="col-sm sub-container">
             <h1>
               {content.period} : {content.title}
             </h1>
