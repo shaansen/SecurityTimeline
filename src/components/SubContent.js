@@ -7,7 +7,7 @@ class SubContent extends Component {
       <div className="container">
         <div className="row">
           <div className="col-sm sub-container">
-            <img src={content.img} />
+            <img src={content.img} alt={content.title}/>
           </div>
           <div className="col-sm sub-container">
             <h1>
