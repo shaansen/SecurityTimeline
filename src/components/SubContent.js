@@ -9,7 +9,7 @@ class SubContent extends Component {
         <Row>
           <Col span={12}>
             <div className="image-container">
-              <img className="object-fit_cover" src={content.img} />
+              <img className="object-fit_cover" src={content.img} alt={content.title} />
             </div>
           </Col>
           <Col span={12}>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { content } from './content';
 import SubContent from './SubContent';
-import { Navbar, Row, Col, Button, Container } from 'react-bootstrap';
+import { Navbar, Button, Container } from 'react-bootstrap';
 
 class Header extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Header extends Component {
     return content.map((c, i) => {
       return (
         <Button key={i} onClick={() => this.changeActiveId(i)}>
-          <div className={this.state.currentId == i ? 'active' : ''}>
+          <div className={this.state.currentId === i ? 'active' : ''}>
             {c.period}
           </div>
         </Button>
@@ -32,20 +32,16 @@ class Header extends Component {
   renderContent() {
     return <SubContent content={content[this.state.currentId]} />;
   }
-  
+
   render() {
     return (
-      <div>
+      <Container fluid>
         <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="/">Security Timeline</Navbar.Brand>
-</Navbar>;
-        <Row>
-          <Col span={2}>
+          <Navbar.Brand href="/">Security Timeline</Navbar.Brand>
+        </Navbar>
             <Container>{this.renderTimeline()}</Container>
-          </Col>
-          <Col span={22}>{this.renderContent()}</Col>
-        </Row>
-      </div>
+        {this.renderContent()}
+      </Container>
     );
   }
 }
