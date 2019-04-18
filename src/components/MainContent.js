@@ -3,6 +3,8 @@ import { content } from './content';
 // import SubContent from './SubContent';
 import VisibilitySensor from 'react-visibility-sensor';
 import SubContent from './SubContent';
+import Timeline from './Timeline';
+import { Navbar } from 'react-bootstrap';
 
 class Header extends Component {
   constructor(props) {
@@ -22,35 +24,33 @@ class Header extends Component {
     });
   }
 
+  handleTimeClick = index => {
+    const c = content[index];
+    document.getElementById(c.title).scrollIntoView(true);
+    this.setState({
+      activeID: index
+    });
+  };
+
   renderHeader() {
-    const pills = content.map((c, i) => {
-      const activeClass = this.state.activeID === i ? 'btn-primary' : '';
-      return (
-        <li key={i}>
-          <button
-            className={'btn ' + activeClass}
-            onClick={() => {
-              document.getElementById(c.title).scrollIntoView(true);
-              this.setState({
-                activeID: i
-              });
-            }}
-          >
-            {c.period}
-          </button>
-        </li>
-      );
+    const listOfTimes = content.map((c, i) => {
+      return { id: i, time: c.period };
     });
 
+    const activeTime = this.state.activeID;
+
     return (
-      <nav className="header navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
-        <a className="navbar-brand" href="/">
-          Security Timeline
-        </a>
-        <div className="timeline">
-        <ul className="nav nav-pills">{pills}</ul>
-        </div>
-      </nav>
+      <div>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="/">Security Timeline</Navbar.Brand>
+        </Navbar>
+        
+        <Timeline
+          listOfTimes={listOfTimes}
+          activeTime={activeTime}
+          handleTimeClick={this.handleTimeClick}
+        />
+      </div>
     );
   }
 
@@ -69,16 +69,16 @@ class Header extends Component {
 
     return content.map((c, i) => {
       return containmentDOMRect ? (
-        <div className="main-content"  id={c.title}>
-        <VisibilitySensor
-          key={i}
-          containment={containmentDOMRect}
-          onChange={e => this.onChange(e, i)}
-        >
-          {({ isVisible }) => {
-            return <SubContent content={c} />;
-          }}
-        </VisibilitySensor>
+        <div className="main-content" id={c.title} key={i}>
+          <VisibilitySensor
+            key={i}
+            containment={containmentDOMRect}
+            onChange={e => this.onChange(e, i)}
+          >
+            {({ isVisible }) => {
+              return <SubContent content={c} />;
+            }}
+          </VisibilitySensor>
         </div>
       ) : null;
     });
