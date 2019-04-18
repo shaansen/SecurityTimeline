@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Container } from 'react-bootstrap';
 
 class SubContent extends Component {
   render() {
     const { content } = this.props;
     return (
-      <div className="maincontent">
+      <Container className="maincontent">
         <Row>
           <Col span={12}>
             <div className="image-container">
@@ -24,7 +24,7 @@ class SubContent extends Component {
             </div>
           </Col>
         </Row>
-      </div>
+      </Container>
     );
   }
 }

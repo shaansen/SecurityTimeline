@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Carousel } from 'antd';
-import { Row, Col, Timeline, PageHeader } from 'antd';
 import { content } from './content';
 import SubContent from './SubContent';
+import { Navbar, Row, Col, Button, Container } from 'react-bootstrap';
 
 class Header extends Component {
   constructor(props) {
@@ -21,11 +20,11 @@ class Header extends Component {
   renderTimeline() {
     return content.map((c, i) => {
       return (
-        <Timeline.Item key={i} onClick={() => this.changeActiveId(i)}>
+        <Button key={i} onClick={() => this.changeActiveId(i)}>
           <div className={this.state.currentId == i ? 'active' : ''}>
             {c.period}
           </div>
-        </Timeline.Item>
+        </Button>
       );
     });
   }
@@ -37,10 +36,12 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <PageHeader title="Security Timeline" />
+        <Navbar bg="light" expand="lg">
+  <Navbar.Brand href="/">Security Timeline</Navbar.Brand>
+</Navbar>;
         <Row>
           <Col span={2}>
-            <Timeline>{this.renderTimeline()}</Timeline>
+            <Container>{this.renderTimeline()}</Container>
           </Col>
           <Col span={22}>{this.renderContent()}</Col>
         </Row>
