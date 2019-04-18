@@ -2,45 +2,99 @@ import React, { Component } from 'react';
 import { content } from './content';
 import SubContent from './SubContent';
 import { Navbar, Button, Container } from 'react-bootstrap';
+import VisibilitySensor from 'react-visibility-sensor';
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentId: 0
+      getElement: null,
+      activeItem: null
     };
   }
 
-  changeActiveId(id) {
+  componentDidMount() {
     this.setState({
-      currentId: id
+      activeItem: 0
     });
   }
 
   renderTimeline() {
-    return content.map((c, i) => {
-      return (
-        <Button key={i} onClick={() => this.changeActiveId(i)}>
-          <div className={this.state.currentId === i ? 'active' : ''}>
-            {c.period}
-          </div>
-        </Button>
+    return (
+      <Container className={'timeline-buttons'}>
+        {content.map((c, i) => {
+          return (
+            <Button
+              variant={this.state.activeItem === i ? 'primary' : ''}
+              key={i}
+              value={i}
+              onClick={() => this.changeActiveId(i)}
+            >
+              <div className={this.state.currentId === i ? 'active' : ''}>
+                {c.period}
+              </div>
+            </Button>
+          );
+        })}
+      </Container>
+    );
+  }
+
+  changeActiveId(activeItem) {
+    this.setState({ activeItem }, () => {
+      const element = document.getElementById(
+        content[this.state.activeItem].title
       );
+      element.scrollIntoView();
     });
   }
 
+  onChange(isVisible, activeItem) {
+    this.setState(
+      {
+        activeItem
+      },
+      () => {
+        const element = document.getElementById(
+          content[this.state.activeItem].title
+        );
+        element.scrollIntoView();
+      }
+    );
+  }
+
   renderContent() {
-    return <SubContent content={content[this.state.currentId]} />;
+    var containmentDOMRect = this.state.getElement
+      ? this.state.getElement
+      : null;
+
+    return content.map((c, i) => {
+      return (
+        <VisibilitySensor
+          key={i}
+          value={i}
+          containment={containmentDOMRect}
+          onChange={e => this.onChange(e, i)}
+        >
+          {({ isVisible }) => {
+            return <SubContent content={c} />;
+          }}
+        </VisibilitySensor>
+      );
+    });
   }
 
   render() {
     return (
       <Container fluid>
-        <Navbar bg="light" expand="lg">
+        <Navbar fixed="top" bg="light" expand="lg">
           <Navbar.Brand href="/">Security Timeline</Navbar.Brand>
+          {this.renderTimeline()}
         </Navbar>
-            <Container>{this.renderTimeline()}</Container>
-        {this.renderContent()}
+
+        <Container className="content-container">
+          {this.renderContent()}
+        </Container>
       </Container>
     );
   }
