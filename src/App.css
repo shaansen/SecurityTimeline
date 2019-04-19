@@ -23,3 +23,7 @@ img[class] {
   z-index: 10;
   background-color: white;
 }
+
+.maincontent {
+  padding-top: 15vh;
+}
