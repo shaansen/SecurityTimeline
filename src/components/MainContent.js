@@ -50,17 +50,11 @@ class Header extends Component {
   }
 
   onChange(isVisible, activeItem) {
-    this.setState(
-      {
+    if (isVisible) {
+      this.setState({
         activeItem
-      },
-      () => {
-        const element = document.getElementById(
-          content[this.state.activeItem].title
-        );
-        element.scrollIntoView();
-      }
-    );
+      });
+    }
   }
 
   renderContent() {
