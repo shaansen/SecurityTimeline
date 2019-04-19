@@ -7,13 +7,12 @@ class SubContent extends Component {
     return (
       <Container className="maincontent" id={content.title}>
         <Row>
-          <Col>
+          <Col sm>
             <div className="image-container">
               <img className="object-fit_cover" src={content.img} alt={content.title} />
             </div>
           </Col>
-          <Col>
-            <div className="subcontent">
+          <Col sm>
               <h1 className="subcontent-header">
                 {content.period} : {content.title}
               </h1>
@@ -21,7 +20,6 @@ class SubContent extends Component {
               <p>{content.description}</p>
               <h3 className="general-header">Implication</h3>
               <p>{content.implication}</p>
-            </div>
           </Col>
         </Row>
       </Container>
