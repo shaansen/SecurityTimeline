@@ -5,7 +5,10 @@ img {
 }
 
 .image-container {
-  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 75vh;
 }
 
 img[class] {
@@ -26,4 +29,5 @@ img[class] {
 
 .maincontent {
   padding-top: 15vh;
+  margin-bottom: 10vh;
 }
