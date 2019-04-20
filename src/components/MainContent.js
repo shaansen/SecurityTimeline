@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { content } from './content';
 import SubContent from './SubContent';
 import { Navbar, Button, Container } from 'react-bootstrap';
-import VisibilitySensor from 'react-visibility-sensor';
 
 class Header extends Component {
   constructor(props) {
@@ -21,7 +20,7 @@ class Header extends Component {
 
   renderTimeline() {
     return (
-      <Container className={'timeline-buttons'}>
+      <Container fluid className={'timeline-buttons'}>
         {content.map((c, i) => {
           return (
             <Button
@@ -40,7 +39,7 @@ class Header extends Component {
     );
   }
 
-  changeActiveId(activeItem) {
+  changeActiveId = (activeItem) => {
     this.setState({ activeItem }, () => {
       const element = document.getElementById(
         content[this.state.activeItem].title
@@ -49,33 +48,8 @@ class Header extends Component {
     });
   }
 
-  onChange(isVisible, activeItem) {
-    if (isVisible) {
-      this.setState({
-        activeItem
-      });
-    }
-  }
-
   renderContent() {
-    var containmentDOMRect = this.state.getElement
-      ? this.state.getElement
-      : null;
-
-    return content.map((c, i) => {
-      return (
-        <VisibilitySensor
-          key={i}
-          value={i}
-          containment={containmentDOMRect}
-          onChange={e => this.onChange(e, i)}
-        >
-          {({ isVisible }) => {
-            return <SubContent content={c} />;
-          }}
-        </VisibilitySensor>
-      );
-    });
+    return content.map((c, i) => <SubContent key={i} content={c} index={i} changeActiveId={this.changeActiveId}/>);
   }
 
   render() {
@@ -85,7 +59,7 @@ class Header extends Component {
           <Navbar.Brand href="/">Security Timeline</Navbar.Brand>
           {this.renderTimeline()}
         </Container>
-        <Container className="content-container">
+        <Container fluid className="content-container">
           {this.renderContent()}
         </Container>
       </div>
