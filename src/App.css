@@ -20,6 +20,8 @@ img[class] {
 
 div.navbar.container-fluid {
   position: fixed;
+  background-color: white;
+  z-index: 10;
 }
 
 div.timeline-buttons.container-fluid {
