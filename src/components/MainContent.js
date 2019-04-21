@@ -25,7 +25,7 @@ class Header extends Component {
           return (
             <Button
               variant={this.state.activeItem === i ? 'primary' : ''}
-              id={"tbutton_"+i}
+              id={'tbutton_' + i}
               key={i}
               value={i}
               onClick={() => this.changeActiveId(i)}
@@ -40,19 +40,26 @@ class Header extends Component {
     );
   }
 
-  changeActiveId = (activeItem) => {
+  changeActiveId = activeItem => {
     this.setState({ activeItem }, () => {
       const element = document.getElementById(
         content[this.state.activeItem].title
       );
       element.scrollIntoView();
-      const button = document.getElementById("tbutton_"+activeItem)
-      button.scrollIntoView({inline: 'center'});
+      const button = document.getElementById('tbutton_' + activeItem);
+      button.scrollIntoView({ inline: 'center' });
     });
-  }
+  };
 
   renderContent() {
-    return content.map((c, i) => <SubContent key={i} content={c} index={i} changeActiveId={this.changeActiveId}/>);
+    return content.map((c, i) => (
+      <SubContent
+        key={i}
+        content={c}
+        index={i}
+        changeActiveId={this.changeActiveId}
+      />
+    ));
   }
 
   render() {

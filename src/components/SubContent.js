@@ -26,38 +26,28 @@ class SubContent extends Component {
     const { content, index } = this.props;
     return (
       <Container fluid className="maincontent" id={content.title}>
-        <Row>
-          <Col sm>
-            <div className="image-container">
-              <img
-                className="object-fit_cover"
-                src={content.img}
-                alt={content.title}
-              />
-            </div>
-          </Col>
-          <Col sm>
-            <VisibilitySensor
-              key={index}
-              value={index}
-              containment={containmentDOMRect}
-              onChange={e => this.onChange(e, index)}
-            >
-              {({ isVisible }) => {
-                return (
-                  <h1 className="subcontent-header">
-                    {content.period} : {content.title}
-                  </h1>
-                );
-              }}
-            </VisibilitySensor>
+        <div className="image-container">
+          <Image src={content.img} alt={content.title} />
+        </div>
+        <VisibilitySensor
+          key={index}
+          value={index}
+          containment={containmentDOMRect}
+          onChange={e => this.onChange(e, index)}
+        >
+          {({ isVisible }) => {
+            return (
+              <h1 className="subcontent-header">
+                {content.period} : {content.title}
+              </h1>
+            );
+          }}
+        </VisibilitySensor>
 
-            <h3 className="general-header">Description</h3>
-            <p>{content.description}</p>
-            <h3 className="general-header">Implication</h3>
-            <p>{content.implication}</p>
-          </Col>
-        </Row>
+        <h3 className="general-header">Description</h3>
+        <p>{content.description}</p>
+        <h3 className="general-header">Implication</h3>
+        <p>{content.implication}</p>
       </Container>
     );
   }
