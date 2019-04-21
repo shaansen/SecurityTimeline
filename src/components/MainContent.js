@@ -42,12 +42,12 @@ class Header extends Component {
 
   changeActiveId = activeItem => {
     this.setState({ activeItem }, () => {
-      console.log(activeItem," button clicked")
       const element = document.getElementById(
         content[this.state.activeItem].title
       );
-      element.scrollIntoView({
+      element.scrollIntoView({ 
         behavior: 'smooth'
+        
       });
     });
   };
@@ -55,7 +55,7 @@ class Header extends Component {
   changeActiveButtonOnly = activeItem => {
     this.setState({ activeItem }, () => {
       const button = document.getElementById('tbutton_' + activeItem);
-      button.scrollIntoView({ inline: 'center' });
+      button.scrollIntoView({ inline: "start" });
     });
   }
 

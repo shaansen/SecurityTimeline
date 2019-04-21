@@ -26,9 +26,6 @@ class SubContent extends Component {
     const { content, index } = this.props;
     return (
       <Container className="maincontent" id={content.title}>
-        <div className="image-container">
-          <Image src={content.img} alt={content.title} />
-        </div>
         <VisibilitySensor
           key={index}
           value={index}
@@ -37,13 +34,18 @@ class SubContent extends Component {
         >
           {({ isVisible }) => {
             return (
+              <div>
+              <div className="image-container">
+                <Image src={content.img} alt={content.title} />
+              </div>
               <h1 className="subcontent-header">
-                {content.period} : {content.title}
-              </h1>
+              {content.period} : {content.title}
+            </h1>
+            </div>
             );
           }}
         </VisibilitySensor>
-
+        
         <h3 className="general-header">Description</h3>
         <p>{content.description}</p>
         <h3 className="general-header">Implication</h3>
