@@ -1,3 +1,10 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Comfortaa';
+  text-align: justify;
+}
+
 .image-container {
   width: 100%;
   display: flex;
@@ -7,15 +14,15 @@
 img[class] {
   object-fit: cover;
   width: 100%;
-  height: 50%;
+  height: 40vh;
   padding: 25px 25px 25px 25px;
   border-radius: 50px;
 }
 
 div.navbar.container-fluid {
   position: fixed;
-  background-color: white;
-  z-index: 10;
+  z-index: 11;
+  background-color: black;
 }
 
 div.timeline-buttons.container-fluid {
@@ -23,7 +30,6 @@ div.timeline-buttons.container-fluid {
   flex-direction: row;
   overflow: auto;
   z-index: 10;
-  background-color: white;
   flex-wrap: nowrap;
 }
 
@@ -40,4 +46,71 @@ div.timeline-buttons {
 div.timeline-buttons > .btn {
   display: inline-block;
   float: none;
+}
+
+button.btn {
+  z-index: 2;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 40%;
+}
+
+button.btn:hover {
+  z-index: 2;
+  color: black;
+  background-color: #e6c974;
+  border: 1px solid white;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 40%;
+}
+
+.navbar-brand {
+  color: #dcb239;
+  font-family: 'Bungee Inline';
+  font-size: 3em;
+}
+
+.navbar-brand:hover {
+  color: white;
+  font-family: 'Bungee Inline';
+  font-size: 3em;
+}
+
+button.btn.btn-primary {
+  background-color: #dcb239;
+  border: 1px solid white;
+  color: black;
+  font-weight: bold;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  height: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: #dcb239;
+}
+
+.line {
+  position: absolute;
+  top: 107px;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+}
+
+h1 {
+  font-weight: bold;
+  font-family: 'Righteous';
 }

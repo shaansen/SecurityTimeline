@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Container, Image } from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
 import VisibilitySensor from 'react-visibility-sensor';
 
 class SubContent extends Component {
@@ -25,7 +25,7 @@ class SubContent extends Component {
 
     const { content, index } = this.props;
     return (
-      <Container fluid className="maincontent" id={content.title}>
+      <Container className="maincontent" id={content.title}>
         <div className="image-container">
           <Image src={content.img} alt={content.title} />
         </div>
