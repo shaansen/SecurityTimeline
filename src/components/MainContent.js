@@ -42,16 +42,22 @@ class Header extends Component {
 
   changeActiveId = activeItem => {
     this.setState({ activeItem }, () => {
+      console.log(activeItem," button clicked")
       const element = document.getElementById(
         content[this.state.activeItem].title
       );
       element.scrollIntoView({
         behavior: 'smooth'
       });
+    });
+  };
+
+  changeActiveButtonOnly = activeItem => {
+    this.setState({ activeItem }, () => {
       const button = document.getElementById('tbutton_' + activeItem);
       button.scrollIntoView({ inline: 'center' });
     });
-  };
+  }
 
   renderContent() {
     return content.map((c, i) => (
@@ -59,7 +65,7 @@ class Header extends Component {
         key={i}
         content={c}
         index={i}
-        changeActiveId={this.changeActiveId}
+        changeActiveId={this.changeActiveButtonOnly}
       />
     ));
   }
