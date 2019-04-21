@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container, Image } from 'react-bootstrap';
 import VisibilitySensor from 'react-visibility-sensor';
 
 class SubContent extends Component {
