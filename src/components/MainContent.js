@@ -25,6 +25,7 @@ class Header extends Component {
           return (
             <Button
               variant={this.state.activeItem === i ? 'primary' : ''}
+              id={"tbutton_"+i}
               key={i}
               value={i}
               onClick={() => this.changeActiveId(i)}
@@ -45,6 +46,8 @@ class Header extends Component {
         content[this.state.activeItem].title
       );
       element.scrollIntoView();
+      const button = document.getElementById("tbutton_"+activeItem)
+      button.scrollIntoView({inline: 'center'});
     });
   }
 
