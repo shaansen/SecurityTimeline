@@ -45,7 +45,9 @@ class Header extends Component {
       const element = document.getElementById(
         content[this.state.activeItem].title
       );
-      element.scrollIntoView();
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
       const button = document.getElementById('tbutton_' + activeItem);
       button.scrollIntoView({ inline: 'center' });
     });
@@ -66,7 +68,7 @@ class Header extends Component {
     return (
       <div>
         <Container fluid className={'navbar'}>
-          <Navbar.Brand href="/">Timeline</Navbar.Brand>
+          <Navbar.Brand href="https://shaansen.github.io/SecurityTimeline">Timeline</Navbar.Brand>
           <div className="line"></div>
           {this.renderTimeline()}
         </Container>
