@@ -18,16 +18,30 @@ img[class] {
   border-radius: 50px;
 }
 
-.navbar {
+div.navbar.container-fluid {
   position: fixed;
+}
+
+div.timeline-buttons.container-fluid {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  flex-direction: row;
+  overflow: auto;
   z-index: 10;
   background-color: white;
+  flex-wrap: nowrap;
 }
 
 .maincontent {
   padding-top: 15vh;
   margin-bottom: 10vh;
+}
+
+div.timeline-buttons {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.timeline-buttons > .btn {
+  display: inline-block;
+  float: none;
 }
