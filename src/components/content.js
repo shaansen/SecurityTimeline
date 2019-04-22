@@ -2,7 +2,7 @@ export const content = [
   {
     img:
       'https://wwwassets.rand.org/content/rand/blog/2013/11/willis-ware-computer-pioneer-helped-build-early-machines/jcr:content/par/blogpost.aspectcrop.868x455.cm.jpg/x1495293118147.jpg.pagespeed.ic.Dy_QzpAAqT.jpg',
-    period: '1960s',
+    period: '1960',
     title: 'The Fair Warning',
     description:
       "In 1969, ARPANET was first established to enable researchers and educational institutions all over America with the intent of sharing information and making collaboration on projects easy. During its development phase, one of the few peoples to express their concerns on the security aspect of such a network was Willis Ware, an engineer working for RAND Corporation. He explained the risks of resource sharing and online computer networks in his paper 'Security and Privacy in Computer Systems'. At that moment, concerns such as his were disregarded and considered restrictive to the growth of the ARPANET project. (Kaplan, 2016)",
@@ -12,7 +12,7 @@ export const content = [
   {
     img:
       'https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2016/08/19/Others/Images/2016-08-19/GettyImages-503151821471618810.jpg?uuid=ogDO0mYdEea02DPpMbWibQ',
-    period: '1980s',
+    period: '1980',
     title: "The First White House 'Cyber-Warfare' Directive",
     description:
       "Ronald Reagan was the first American President to express his concerns on America's most sensitive computers being hacked. This epiphany was a result of watching the Cold-war cyber cult movie 'War Games'. He expressed his concerns to Chairman of Joint Chiefs John Vessey. As a result, an assessment on the possibility of such an event was done and this led to the creation of the first policy document pertaining to cyber-security called NSDD-145 in 1984. This policy was titled 'National Policy on Telecommunications and Automated Information Systems Security'. (Kaplan, 2016)",
@@ -22,7 +22,7 @@ export const content = [
   {
     img:
       'https://i.kinja-img.com/gawker-media/image/upload/s--oX7r9P-j--/c_scale,f_auto,fl_progressive,q_80,w_800/cxskqff3oivu5e1n3ezx.jpg',
-    period: '1990s',
+    period: '1990',
     title: 'First Successful Counter-C2 Experiment',
     description:
       'Operation Desert Storm marked the first use of Counter Command and Control Warfare in penetrating the Iraqi command and control network. It helped not only in understanding the Iraqi troop movements but also to avoid detection of its own troops by the enemy. \n In spite of its success, most of the higher ups in the Army as well as the Pentagon were reluctant to depend on such novel methods of Warfare, where instead bombs and missile assured a 100% certainty in winning wars.\n It was also anticipated that in the near future, instead of bombs and missiles, cyber warfare would supercede as the dominant form of warfare. It could be used to damage critical infrastructure and in constituting acts of war remotely. (Kaplan, 2016)',
@@ -32,7 +32,7 @@ export const content = [
   {
     img:
       'https://media.gettyimages.com/photos/admiral-william-studeman-acting-director-of-the-cia-testifies-before-picture-id51969414?s=2048x2048',
-    period: '1990s',
+    period: '1990',
     title: 'The Tale Of Two Papers - William Studeman',
     description:
       'In his tenure as the NSA Director, William Studeman(inset) commissioned two papers to address the changing landscape of cyber warfare.\n The first paper "Global Access Study" dealt with the change from analog to digital technology. It also addressed the need to innovate to stay in tune with the current technology as well as in keeping track of its older methods.\nThe second paper dealt with the analysis of NSA personnel and their skillset. It addressed the need to have sufficient Computer Scientists who could help in advising againts Hardware and Software vulnerabilities. (Kaplan, 2016)',
@@ -42,7 +42,7 @@ export const content = [
   {
     img:
       'https://www.boozallen.com/assets/boozallen_site/dig/images/bio/leadership/mcconnell-mike.jpg.img.jpeg',
-    period: '1990s',
+    period: '1990',
     title: 'The Transition From Analog To Digital',
     description:
       "It was during his tenure as the NSA Director, Mike McConnell(inset) when the technology landscape began transitioning from Analog to Digital forms of communications.\nHe realized this the analog receivers NSA had set up around the world stopped receiving any signals. Also, when one of his aides explained that the world's main lines of communications were now largely determined by the path of the fiber optic cables, did he come to realize that analog forms of communications would be soon replaced by newer digital technology.\nDuring his tenure, he also took the move to exchange data and move personel from SIGINT and Information Assurance Directorate, where SIGINT was focussing on exploiting weakness in foreign nations' networks and Information Assurance Directorate was involved in discovering flaws in the software programs that the foreign nations may be using. (Kaplan, 2016)",
@@ -82,7 +82,7 @@ export const content = [
     img:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Peiter_Zatko_at_DARPA.jpg/1200px-Peiter_Zatko_at_DARPA.jpg',
     period: '1998',
-    title: 'L0pht and its revelations',
+    title: 'L0pht and its revelation',
     description:
       "White House Counter-terrorism advisor Richard Clarke assessed the threat to America's networks by working with a group of eccentric computer geniuses who called themselves L0pht. The point man for this group was 'Mudge' aka Peiter Zatko (inset) who eventually became the security advisor to DARPA in the coming years. This meet helped Clarke understand the gravity of the situation, since it was clearly evident that almost all the networks had huge gaping holes in terms of network security, which needed to be fixed. (Kaplan, 2016)",
     implication:
@@ -111,7 +111,7 @@ export const content = [
   {
     img:
       'https://cdn.nextgov.com/media/img/upload/2017/02/16/021617keithalexanderNG/860x394.jpg',
-    period: '2005-2008',
+    period: '2005',
     title: 'Finally catching up with the current technology',
     description:
       "Before Keith Alexander (inset) took the helm of NSA, he served as CentCom's Intelligence chief where he developed analytic tools that could parse through deluges of data and recognize patterns and connections.\nBefore his arrival at NSA, the TrailBlazer program was scrapped because compared to the budget invested in it, the program couldn't generate results in real time owing to the overwhelming data fed into it. To replace it, Keith launched another program called 'Turbulence', which unlike Trailblazer consisted of 9 discrete systems each with their individual functions and varying technology.\nHe also proposed putting NSA analysts and equipments in the war zone. As a result, the lag time between receiving and acting on intelligence reduced drastically from sixteen hours to few minutes. (Kaplan, 2016)",
@@ -151,7 +151,7 @@ export const content = [
   {
     img:
       'http://s.wsj.net/public/resources/images/BN-CW216_shangh_G_20140520024041.jpg',
-    period: 'Early 2010',
+    period: '2010',
     title: 'The Uncomfortable Discovery',
     description:
       'The United States Intelligence agencies discovered that their critical infrastructure, defense agencies were constantly being hacked by Chinese Hackers. These intrusions were later discussed with the Chinese diplomats in various summits, but were denied any affiliations with, by the Chinese Government.\nBut when Mandiant Report published in 2009 stated that these intrusions were not done by independent hacking organizations but were government sanctioned programs, it was worrisome for the United States government.\nThe intrusions were done out of a 12 story building(inset) in Pudong New Area of Shanghai and housed as many as 2,000 personnel. (Kaplan, 2016)',
@@ -171,7 +171,7 @@ export const content = [
   {
     img: 'https://www.jewishpress.com/wp-content/uploads/Edward-Snowden.png',
     period: '2013',
-    title: 'One Step Forward, Two Steps Backwards',
+    title: 'One Step Forward, Two Steps Backward',
     description:
       'Edward Snowden(inset) revealed to the world not just the NSA domestic surveillance but also the spying on Angela Merkel, the PRISM program, the data collected by private firms like Google, Yahoo, etc. for surveillance. This revelation created deep distrust between the American Government and its citizens and strained relationships with other countries.\nBut from the perspective of intelligence community, the losses were bigger than distrust. The losses were majorly of confidential techniques that NSA used for information gathering on its sources. With this revelation, all of their techniques were out in the open. Intelligence community had fallen behind inspite of all the progress they had made. (Kaplan, 2016)',
     implication:
@@ -189,8 +189,8 @@ export const content = [
   {
     img:
       'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/izqBolCQafHw/v1/1000x-1.png',
-    period: '2014-2015',
-    title: 'Sony and Sands',
+    period: '2014',
+    title: 'Sony and Sand',
     description:
       "As a response to Sheldon Adelson's crude response to nuclear testing in Iran, Iranian hackers hacked into his corporation called 'Las Vegas Sands Corp' destroying servers and computers in addition to stealing customer and employee's private information.\nIn a similar incident, North Korean hackers hacked into Sony before the release of the film 'The Interview' which dealt with the assassination of their ruler. The damage incurred in the form of repairs and business lost was accounted to $170 million in addition to the loss of personal information of their customers. (Kaplan, 2016)",
     implication:

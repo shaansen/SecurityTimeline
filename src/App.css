@@ -35,10 +35,11 @@ div.timeline-buttons.container-fluid {
   overflow: auto;
   z-index: 10;
   flex-wrap: nowrap;
+  height: 10vh;
 }
 
 .maincontent {
-  padding-top: 15vh;
+  padding-top: 20vh;
   margin-bottom: 10vh;
 }
 
@@ -56,20 +57,21 @@ button.btn {
   z-index: 2;
   color: white;
   background-color: black;
-  border: 1px solid white;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
   border-radius: 40%;
+  transform: rotate(-45deg);
 }
 
 button.btn:hover {
   z-index: 2;
+  color: white;
+  background-color: white;
   color: black;
-  background-color: #e6c974;
-  border: 1px solid white;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
   border-radius: 40%;
+  transform: rotate(-45deg);
 }
 
 .navbar-brand {
@@ -85,13 +87,14 @@ button.btn:hover {
 }
 
 button.btn.btn-primary {
-  background-color: #dcb239;
-  border: 1px solid white;
-  color: black;
+  color: #dcb239;
   font-weight: bold;
+  border-color: black !important;
+  margin: 0 0.5em 0 0.5em;
+  font-size: 1.5em;
 }
 
-.btn:focus,.btn:active {
+.btn:focus,.btn:active,.btn.btn-primary:focus,.btn.btn-primary:active {
   outline: none !important;
   box-shadow: none;
 }
@@ -104,14 +107,6 @@ h1,
 h2,
 h3 {
   color: #dcb239;
-}
-
-.line {
-  position: absolute;
-  top: 107px;
-  height: 2px;
-  width: 100%;
-  background-color: white;
 }
 
 h1 {
