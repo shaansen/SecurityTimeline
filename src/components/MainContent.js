@@ -3,20 +3,36 @@ import { content } from './content';
 import SubContent from './SubContent';
 import { Navbar, Button, Container } from 'react-bootstrap';
 
+let scrollTimeout = null;
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       getElement: null,
-      activeItem: null
+      activeItem: null,
+      scrollEnabled: true
     };
   }
 
   componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
     this.setState({
       activeItem: 0
     });
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = event => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      this.setState({
+        scrollEnabled: true
+      });
+    }, 1000);
+  };
 
   renderTimeline() {
     return (
@@ -28,7 +44,7 @@ class Header extends Component {
               id={'tbutton_' + i}
               key={i}
               value={i}
-              onClick={() => this.changeActiveId(i)}
+              onClick={() => this.scrollToDate(i)}
             >
               <div className={this.state.currentId === i ? 'active' : ''}>
                 {c.period}
@@ -40,24 +56,21 @@ class Header extends Component {
     );
   }
 
-  changeActiveId = activeItem => {
-    this.setState({ activeItem }, () => {
+  scrollToDate = activeItem => {
+    this.setState({ activeItem: activeItem, scrollEnabled: false }, () => {
       const element = document.getElementById(
         content[this.state.activeItem].title
       );
-      element.scrollIntoView({ 
-        behavior: 'smooth'
-        
-      });
+      element.scrollIntoView({ behavior: 'smooth' });
     });
   };
 
-  changeActiveButtonOnly = activeItem => {
+  changeActiveId = activeItem => {
     this.setState({ activeItem }, () => {
       const button = document.getElementById('tbutton_' + activeItem);
-      button.scrollIntoView({ inline: "start" });
+      button.scrollIntoView({ inline: 'start' });
     });
-  }
+  };
 
   renderContent() {
     return content.map((c, i) => (
@@ -65,7 +78,8 @@ class Header extends Component {
         key={i}
         content={c}
         index={i}
-        changeActiveId={this.changeActiveButtonOnly}
+        changeActiveId={this.changeActiveId}
+        scrollEnabled={this.state.scrollEnabled}
       />
     ));
   }
@@ -74,8 +88,10 @@ class Header extends Component {
     return (
       <div>
         <Container fluid className={'navbar'}>
-          <Navbar.Brand href="https://shaansen.github.io/SecurityTimeline">Timeline</Navbar.Brand>
-          <div className="line"></div>
+          <Navbar.Brand href="https://shaansen.github.io/SecurityTimeline">
+            Timeline
+          </Navbar.Brand>
+          <div className="line" />
           {this.renderTimeline()}
         </Container>
         <Container fluid className="content-container">

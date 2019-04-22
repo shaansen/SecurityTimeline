@@ -34,6 +34,7 @@ class SubContent extends Component {
           value={index}
           containment={containmentDOMRect}
           onChange={e => this.onChange(e, index)}
+          active={this.props.scrollEnabled}
         >
           {({ isVisible }) => {
             return (
