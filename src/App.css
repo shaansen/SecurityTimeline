@@ -35,7 +35,7 @@ div.timeline-buttons.container-fluid {
   overflow: auto;
   z-index: 10;
   flex-wrap: nowrap;
-  height: 10vh;
+  min-height: 10vh;
 }
 
 .maincontent {

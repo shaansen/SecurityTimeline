@@ -61,7 +61,7 @@ class Header extends Component {
       const element = document.getElementById(
         content[this.state.activeItem].title
       );
-      element.scrollIntoViewIfNeeded();
+      element.scrollIntoView({ behavior: 'smooth' });
     });
   };
 
