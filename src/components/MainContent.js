@@ -86,18 +86,14 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Container fluid className={'navbar'}>
-          <Navbar.Brand href="https://shaansen.github.io/SecurityTimeline">
-            Timeline
-          </Navbar.Brand>
-          <div className="line" />
           {this.renderTimeline()}
         </Container>
         <Container fluid className="content-container">
           {this.renderContent()}
         </Container>
-      </div>
+      </>
     );
   }
 }

@@ -1,7 +1,7 @@
 export const content = [
   {
     img:
-      'https://wwwassets.rand.org/content/rand/blog/2013/11/willis-ware-computer-pioneer-helped-build-early-machines/jcr:content/par/blogpost.aspectcrop.868x455.cm.jpg/x1495293118147.jpg.pagespeed.ic.Dy_QzpAAqT.jpg',
+      'http://www.cerias.purdue.edu/site/images/uploads/willis.png',
     period: '1960',
     title: 'The Fair Warning',
     description:
