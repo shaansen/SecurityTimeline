@@ -28,6 +28,10 @@ class Header extends Component {
   handleScroll = event => {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
+      const element = document.getElementById(
+        content[this.state.activeItem].title
+      );
+      element.scrollIntoView({ behavior: 'smooth' });
       this.setState({
         scrollEnabled: true
       });
@@ -58,10 +62,7 @@ class Header extends Component {
 
   scrollToDate = activeItem => {
     this.setState({ activeItem: activeItem, scrollEnabled: false }, () => {
-      const element = document.getElementById(
-        content[this.state.activeItem].title
-      );
-      element.scrollIntoView({ behavior: 'smooth' });
+      
     });
   };
 
@@ -88,6 +89,9 @@ class Header extends Component {
     return (
       <>
         <Container fluid className={'navbar'}>
+          <Navbar.Brand href="https://shaansen.github.io/SecurityTimeline">
+            Timeline
+          </Navbar.Brand>
           {this.renderTimeline()}
         </Container>
         <Container fluid className="content-container">
