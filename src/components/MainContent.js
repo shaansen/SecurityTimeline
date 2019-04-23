@@ -68,7 +68,7 @@ class Header extends Component {
   changeActiveId = activeItem => {
     this.setState({ activeItem }, () => {
       const button = document.getElementById('tbutton_' + activeItem);
-      button.scrollIntoView({ inline: 'start' });
+      button.scrollIntoView({ inline: 'center' });
     });
   };
 
